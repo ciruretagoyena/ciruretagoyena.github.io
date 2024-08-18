@@ -7,23 +7,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Cambiado de height a min-height para que funcione mejor en móviles */
     color: #333;
 }
 
 /* Contenedor principal del cotizador */
 .cotizador-container {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 20px; /* Reducido para mejor adaptación en pantallas pequeñas */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
-    width: 100%;
+    width: 90%; /* Se adapta al ancho de la pantalla en móviles */
+    box-sizing: border-box; /* Asegura que el padding no exceda el ancho */
+    margin: 10px; /* Añadido para dar espacio en pantallas pequeñas */
 }
 
 /* Título del cotizador */
 .cotizador-container h1 {
-    font-size: 24px;
+    font-size: 22px; /* Ligera reducción de tamaño en móviles */
     margin-bottom: 20px;
     color: #2c3e50;
     text-align: center;
@@ -52,6 +54,7 @@ body {
     border-radius: 5px;
     background-color: #f8f8f8;
     color: #2c3e50;
+    width: 100%; /* Asegura que los selects ocupen el 100% del ancho disponible */
 }
 
 /* Estilo del botón calcular */
@@ -65,6 +68,7 @@ button#calcular {
     font-size: 16px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    width: 100%; /* El botón también ocupa todo el ancho */
 }
 
 button#calcular:hover {
@@ -95,4 +99,21 @@ button#calcular:hover {
     height: 4px;
     background-color: #27ae60;
     border-radius: 2px;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 480px) {
+    .cotizador-container {
+        padding: 15px;
+    }
+    .cotizador-container h1 {
+        font-size: 20px;
+    }
+    button#calcular {
+        font-size: 14px;
+        padding: 10px;
+    }
+    #precio {
+        font-size: 22px;
+    }
 }

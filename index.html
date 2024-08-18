@@ -9,26 +9,20 @@
 <body>
     <div class="cotizador-container">
         <h1>Cotizador de Equipos</h1>
-        <div class="cotizador-form">
-            <label for="modelo">Seleccione el modelo:</label>
-            <select id="modelo" name="modelo">
-                <!-- Las opciones se generarán dinámicamente -->
-            </select>
+        <form class="cotizador-form">
+            <label for="modelo">Modelo:</label>
+            <select id="modelo"></select>
 
-            <label for="sensores">Seleccione la cantidad de sensores:</label>
-            <select id="sensores" name="sensores">
-                <!-- Las opciones se generarán dinámicamente -->
-            </select>
+            <label for="sensores">Cantidad de Sensores:</label>
+            <select id="sensores"></select>
 
-            <button id="calcular">Calcular Precio</button>
-        </div>
-
+            <button type="button" id="calcular">Calcular Precio</button>
+        </form>
         <div class="resultado">
-            <p>El precio es: <span id="precio"></span></p>
+            <p>Precio: <span id="precio">USD 0.00</span></p>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
